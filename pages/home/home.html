@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+
+  
+  <h2>Car Depreciation Calculator</h2>
+  <p>
+  This car depreciation calculator is a handy tool that will help you estimate the value of your car once it's been used. You might be surprised, but the value of your car decreases to 91% of the initial market value the minute you purchase it.
+  </p>
+  <p><em>
+    The car value continues to drop year after year. After five years, your car's value decreases to 40% of the initial value.
+  </em></p>
+  <br />
+
+<ion-item>
+  <ion-label position="fixed">Initial Car Value:</ion-label>
+  <ion-input type="number" [(ngModel)]="initValue"></ion-input>
+</ion-item>
+
+<button ion-button color="secondary" (click)="compute()">Compute</button>
+
+ <br /> <br />
+<ion-item *ngIf="outValue">
+  <h4> Car Value After 5 Years: {{ outValue | currency:'&#8369;' }} </h4>
+  </ion-item>
+</ion-content>
+
